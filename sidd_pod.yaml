@@ -1,6 +1,11 @@
-apiVersion: "v1"
-kind: "Deployment"
+apiVersion: v1
+kind: Pod
 metadata:
-name: siddharth
+  name: sidd12
+spec:
+  containers:
+    - name: sidd12
+      image: nginx
+      ports:
+        - containerPort: 80
 
-specs:
