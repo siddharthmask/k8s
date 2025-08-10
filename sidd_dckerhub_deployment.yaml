@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sidd123
+  labels:
+    app: sidd123
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sidd123
+  template:
+    metadata:
+      labels:
+        app: sidd123
+    spec:
+      containers:
+        - name: sidd123
+          image: siddmak/july_21:V0.1
+          ports:
+            - containerPort: 80
+      imagePullSecrets:
+        - name: my-secret
