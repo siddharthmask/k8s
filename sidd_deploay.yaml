@@ -1,0 +1,21 @@
+apiVersion: apps/v1  # coz we have created as app/v2 due to deployment.
+kind: Deployment    #deployment object.
+metadata:
+  name: sidd123        # for deploymeny and contair values can be same .
+  labels:               #we use this values replica object and pod object.
+    app: sidd123       # labels vaeriable and  value should be same every where.
+spec:
+  replicas: 2      # replica object.
+  selector:
+    matchLabels:
+      app: sidd123
+  template:
+    metadata:
+      labels:
+        app: sidd123
+    spec:
+      containers:                #pod object.
+       - name: sidd123
+         image: nginx
+         ports:
+          - containerPort: 80
